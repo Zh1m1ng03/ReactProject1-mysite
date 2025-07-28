@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { useTheme } from "../context/ThemeContext";
 import { createClient } from "contentful";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-import ReactMarkdown from "react-markdown";
 
 const client = createClient({
   space: "4okojd13yd75",
