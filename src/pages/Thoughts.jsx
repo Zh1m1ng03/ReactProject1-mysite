@@ -83,7 +83,7 @@ function Thoughts() {
               {activePost.fields.coverImage && (
                 <img
                   src={activePost.fields.coverImage.fields.file.url}
-                  alt="封面"
+                  alt="coverImage"
                   className="w-full max-h-[300px] object-contain rounded-xl mb-6"
                 />
               )}
