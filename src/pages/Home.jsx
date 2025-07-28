@@ -25,7 +25,7 @@ function Home() {
       style={backgroundStyle}
       onMouseMove={handleMouseMove}
     >
-      <div className="max-w-7xl mx-auto flex flex-row gap-6 px-4">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-6 px-4">
         <div className="transform hover:scale-105 transition duration-300 flex-1 bg-white rounded-2xl shadow-md p-6 text-left min-h-96">
           <h2 className="text-xl font-semibold mb-4 text-center">About Me</h2>
           <p>Name: Zhiming Wu</p>
