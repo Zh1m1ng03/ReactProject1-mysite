@@ -96,9 +96,9 @@ function Thoughts() {
                 {new Date(activePost.fields.postedTime).toLocaleString()}
               </p>
 
-              {activePost.fields.coverImage && (
+              {activePost.fields.image && (
                 <img
-                  src={activePost.fields.coverImage.fields.file.url}
+                  src={activePost.fields.image.fields.file.url}
                   alt="coverImage"
                   className="w-full max-h-[300px] object-contain rounded-xl mb-6"
                 />
