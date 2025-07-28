@@ -6,10 +6,19 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import Home from "./pages/Home";
 import Projects from "./pages/Projects";
 import Thoughts from "./pages/Thoughts";
+import { useTheme } from "./context/ThemeContext";
 
 function App() {
+  const { darkMode, setDarkMode } = useTheme();
+
   return (
     <div className="min-h-screen flex flex-col">
+      <button
+        onClick={() => setDarkMode(!darkMode)}
+        className="absolute top-4 right-4 p-2 bg-gray-200 dark:bg-gray-800 dark:text-gray-100 rounded"
+      >
+        {darkMode ? "☀️ Light" : "🌙 Dark"}
+      </button>
       <Header />
       <Nav />
       <main className="flex-1">

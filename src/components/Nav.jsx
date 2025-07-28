@@ -1,6 +1,6 @@
 function Nav() {
   return (
-    <nav className="bg-sky-700 text-white flex justify-center gap-6 p-4">
+    <nav className="bg-sky-700 text-white flex justify-center gap-6 p-4 dark:bg-black">
       <a
         href="/home"
         className="px-3 py-2 rounded-lg hover:bg-sky-600 transition hover:scale-110"

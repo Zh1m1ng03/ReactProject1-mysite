@@ -1,11 +1,13 @@
 // src/pages/Home.jsx
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useTheme } from "../context/ThemeContext";
 
 function Home() {
   const [showSubPageEdu, setShowSubPageEdu] = useState(false);
   const [showSubPageSkill, setShowSubPageSkill] = useState(false);
-
   const [mousePos, setMousePos] = useState({ x: 50, y: 50 });
+
+  const { darkMode } = useTheme();
 
   const handleMouseMove = (e) => {
     const rect = e.currentTarget.getBoundingClientRect();
@@ -14,19 +16,25 @@ function Home() {
     setMousePos({ x, y });
   };
 
+  useEffect(() => {
+    setMousePos({ x: 50, y: 50 });
+  }, []);
+
   const backgroundStyle = {
-    background: `radial-gradient(circle at ${mousePos.x}% ${mousePos.y}%, #e0f2ff, #ffffff)`,
-    transition: "background 0.1s ease",
+    background: `radial-gradient(circle at ${mousePos.x}% ${mousePos.y}%, ${
+      darkMode ? "#1f2937" : "#e0f2ff"
+    }, ${darkMode ? "#000000" : "#ffffff"})`,
+    transition: "background 0.5s ease",
   };
 
   return (
     <main
-      className="py-10 px-4"
+      className="py-10 px-4 transition-colors duration-500 min-h-screen"
       style={backgroundStyle}
       onMouseMove={handleMouseMove}
     >
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-6 px-4">
-        <div className="transform hover:scale-105 transition duration-300 flex-1 bg-white rounded-2xl shadow-md p-6 text-left min-h-96">
+        <div className="transform hover:scale-105 transition duration-300 flex-1 bg-white rounded-2xl shadow-md p-6 text-left min-h-96 dark:bg-gray-800 dark:text-gray-100">
           <h2 className="text-xl font-semibold mb-4 text-center">About Me</h2>
           <p>Name: Zhiming Wu</p>
           <p>Email: Zhiming.Wu@uon.edu.au</p>
@@ -81,7 +89,7 @@ function Home() {
         <>
           <div
             onClick={() => setShowSubPageEdu(true)}
-            className="flex-1 bg-white rounded-2xl shadow-md p-6 text-left min-h-64 transform hover:scale-105 transition duration-300 cursor-pointer relative"
+            className="dark:bg-gray-800 dark:text-gray-100 flex-1 bg-white rounded-2xl shadow-md p-6 text-left min-h-64 transform hover:scale-105 transition duration-300 cursor-pointer relative"
           >
             <h2 className="text-xl font-semibold mb-4 text-center">
               Education
@@ -101,7 +109,7 @@ function Home() {
 
           {showSubPageEdu && (
             <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex justify-center items-center">
-              <div className="bg-white w-[80vw] h-[80vh] rounded-lg shadow-lg relative p-8">
+              <div className="bg-white w-[80vw] h-[80vh] rounded-lg shadow-lg relative p-8 dark:bg-gray-900 dark:text-gray-100">
                 <button
                   onClick={() => setShowSubPageEdu(false)}
                   className="absolute top-4 right-4 text-2xl text-gray-600 hover:text-red-500"
@@ -122,7 +130,7 @@ function Home() {
         <>
           <div
             onClick={() => setShowSubPageSkill(true)}
-            className="flex-1 bg-white rounded-2xl shadow-md p-6 text-left min-h-64 transform hover:scale-105 transition duration-300 cursor-pointer relative"
+            className="dark:bg-gray-800 dark:text-gray-100 flex-1 bg-white rounded-2xl shadow-md p-6 text-left min-h-64 transform hover:scale-105 transition duration-300 cursor-pointer relative"
           >
             <h2 className="text-xl font-semibold mb-4 text-center">Skills</h2>
             <div className="space-y-2 pl-2 text-sm">
@@ -155,7 +163,7 @@ function Home() {
 
           {showSubPageSkill && (
             <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex justify-center items-center">
-              <div className="bg-white w-[80vw] h-[80vh] rounded-lg shadow-lg relative p-8">
+              <div className="bg-white w-[80vw] h-[80vh] rounded-lg shadow-lg relative p-8 dark:bg-gray-900 dark:text-gray-100">
                 <button
                   onClick={() => setShowSubPageSkill(false)}
                   className="absolute top-4 right-4 text-2xl text-gray-600 hover:text-red-500"
