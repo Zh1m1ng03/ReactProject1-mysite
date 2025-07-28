@@ -56,6 +56,10 @@ function Thoughts() {
               <h3 className="text-lg font-semibold mb-2">
                 {post.fields.title}
               </h3>
+              <p className="text-sm text-gray-500 mb-1">
+                {new Date(post.fields.postedTime).toLocaleDateString()}
+              </p>
+
               <p className="text-sm text-gray-700">{post.fields.description}</p>
               <p className="absolute bottom-4 right-4 text-sm text-gray-600">
                 (Click to view more details)
@@ -76,6 +80,10 @@ function Thoughts() {
               <h3 className="text-2xl font-bold mb-2">
                 {activePost.fields.title}
               </h3>
+              <p className="text-sm text-gray-500 mb-4">
+                {new Date(activePost.fields.postedTime).toLocaleString()}
+              </p>
+
               <p className="text-sm text-gray-500 mb-4">
                 {activePost.fields.description}
               </p>
