@@ -7,12 +7,7 @@ function Nav() {
       >
         Home
       </a>
-      <a
-        href="/about"
-        className="px-3 py-2 rounded-lg hover:bg-sky-600 transition hover:scale-110"
-      >
-        About
-      </a>
+
       <a
         href="/projects"
         className="px-3 py-2 rounded-lg hover:bg-sky-600 transition hover:scale-110"

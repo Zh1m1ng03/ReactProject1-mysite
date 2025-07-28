@@ -5,28 +5,25 @@ function Projects() {
 
   const projects = [
     {
-      title: "Weather App",
-      description: "A real-time weather app using OpenWeather API.",
-      details:
-        "Built with React and Tailwind CSS. Shows temperature, humidity, and weather icons.",
+      title: "Pizza Menu",
+      description: "An ordering pizza app.",
+      details: "Not updated",
+      image: "/pizza-menu.png",
     },
     {
-      title: "Todo List",
-      description: "A simple task management tool.",
-      details:
-        "Users can add, edit, delete, and complete tasks. Uses localStorage to persist data.",
+      title: "Steps",
+      description: "Not updated",
+      details: "Not updated",
     },
     {
-      title: "Recipe Finder",
-      description: "Search recipes by ingredient or name.",
-      details:
-        "Uses the Edamam API to fetch recipe data with calories and cooking instructions.",
+      title: "Travel list",
+      description: "Not updated",
+      details: "Not updated",
     },
     {
-      title: "Portfolio Site",
-      description: "Personal portfolio with projects and resume.",
-      details:
-        "Responsive layout with sections like About, Projects, Skills, Contact.",
+      title: "usePopcorn",
+      description: "Not updated",
+      details: "Not updated",
     },
   ];
 
@@ -35,6 +32,7 @@ function Projects() {
       title: "My Site",
       description: "A Self Introduction Single Page Application .",
       details: "Built with React and Tailwind CSS. Shows self info.",
+      image: "/mysite.png",
     },
   ];
   const [mousePos, setMousePos] = useState({ x: 50, y: 50 });
@@ -107,6 +105,13 @@ function Projects() {
                 {activeProject.title}
               </h3>
               <p className="text-gray-700">{activeProject.details}</p>
+              {activeProject.image && (
+                <img
+                  src={activeProject.image}
+                  alt={activeProject.title}
+                  className="w-full max-h-[70vh] object-contain rounded-xl mb-4"
+                />
+              )}
             </div>
           </div>
         )}
