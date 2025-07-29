@@ -181,36 +181,40 @@ function Home() {
                   (This section will display detailed skill sets and projects)
                 </p>
                 <div className="mx-auto max-w-4xl px-6 py-10">
-                  <div className="grid grid-cols-[120px_1fr] gap-4">
-                    <div className="font-semibold text-gray-800">Frontend</div>
-                    <div>
-                      <p>
-                        <strong>React:</strong> Hands-on experience with the
-                        React framework, React Hooks, and modern JavaScript.
-                        Independently designed and built a{" "}
-                        <a
-                          href="https://github.com/Zh1m1ng03/ReactProject1-mysite"
-                          className="text-blue-600 underline"
-                        >
-                          local website
-                        </a>{" "}
-                        using React and Vite, with structured components and
-                        integrated blog functionality through a headless CMS.
-                      </p>
-                      <p className="mt-2">
-                        <strong>HTML, XML, PHP, CSS:</strong> Familiar with
-                        using HTML, CSS, PHP, XML, and JavaScript in academic
-                        settings. Completed{" "}
-                        <a
-                          href="https://github.com/Zh1m1ng03/WebProjectAssignment"
-                          className="text-blue-600 underline"
-                        >
-                          assignments and small projects
-                        </a>{" "}
-                        at university involving static webpage creation, form
-                        handling, and server-side scripting using traditional
-                        web technologies.
-                      </p>
+                  <div className="grid grid-cols-1 gap-4 md:grid-cols-[120px_1fr]">
+                    <div className="md:contents">
+                      <div className="font-semibold text-gray-800 md:col-span-1">
+                        Frontend
+                      </div>
+                      <div className="md:col-span-1">
+                        <p>
+                          <strong>React:</strong> Hands-on experience with the
+                          React framework, React Hooks, and modern JavaScript.
+                          Independently designed and built a{" "}
+                          <a
+                            href="https://github.com/Zh1m1ng03/ReactProject1-mysite"
+                            className="text-blue-600 underline"
+                          >
+                            local website
+                          </a>{" "}
+                          using React and Vite, with structured components and
+                          integrated blog functionality through a headless CMS.
+                        </p>
+                        <p className="mt-2">
+                          <strong>HTML, XML, PHP, CSS:</strong> Familiar with
+                          using HTML, CSS, PHP, XML, and JavaScript in academic
+                          settings. Completed{" "}
+                          <a
+                            href="https://github.com/Zh1m1ng03/WebProjectAssignment"
+                            className="text-blue-600 underline"
+                          >
+                            assignments and small projects
+                          </a>{" "}
+                          at university involving static webpage creation, form
+                          handling, and server-side scripting using traditional
+                          web technologies.
+                        </p>
+                      </div>
                     </div>
 
                     <div className="font-semibold text-gray-800">Backend</div>
