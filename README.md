@@ -1,5 +1,7 @@
 # React + Vite
 
+Now it could be accessed via https://react-project1-mysite.vercel.app/home
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
