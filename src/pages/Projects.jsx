@@ -60,22 +60,22 @@ function Projects() {
 
   return (
     <section
-      className="bg-white py-10 px-4"
+      className="bg-white px-4 py-10"
       style={backgroundStyle}
       onMouseMove={handleMouseMove}
     >
-      <div className="max-w-7xl mx-auto">
-        <h2 className="text-3xl font-bold my-8 text-left dark:text-gray-100">
+      <div className="mx-auto max-w-7xl">
+        <h2 className="my-8 text-left text-3xl font-bold dark:text-gray-100">
           My Practice Projects
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-5xl mx-auto">
+        <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 sm:grid-cols-2">
           {projects.map((project, index) => (
             <div
               key={index}
               onClick={() => setActiveProject(project)}
-              className="dark:bg-gray-800 dark:text-gray-100 transform hover:scale-105 transition duration-300 bg-white rounded-2xl shadow-md p-6 text-left min-h-60 cursor-pointer"
+              className="min-h-60 transform cursor-pointer rounded-2xl bg-white p-6 text-left shadow-md transition duration-300 hover:scale-105 dark:bg-gray-800 dark:text-gray-100"
             >
-              <h3 className="text-lg font-semibold mb-2">{project.title}</h3>
+              <h3 className="mb-2 text-lg font-semibold">{project.title}</h3>
               <p className="text-sm text-gray-700 dark:text-gray-500">
                 {project.description}
               </p>
@@ -86,17 +86,17 @@ function Projects() {
           ))}
         </div>
 
-        <h2 className="text-3xl font-bold my-8 text-left dark:text-gray-100">
+        <h2 className="my-8 text-left text-3xl font-bold dark:text-gray-100">
           My Own Projects
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 max-w-5xl mx-auto gap-6">
+        <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 sm:grid-cols-2">
           {ownProjects.map((project, index) => (
             <div
               key={index}
               onClick={() => setActiveProject(project)}
-              className="dark:bg-gray-800 dark:text-gray-100 transform hover:scale-105 transition duration-300 bg-white rounded-2xl shadow-md p-6 text-left min-h-60 cursor-pointer"
+              className="min-h-60 transform cursor-pointer rounded-2xl bg-white p-6 text-left shadow-md transition duration-300 hover:scale-105 dark:bg-gray-800 dark:text-gray-100"
             >
-              <h3 className="text-lg font-semibold mb-2">{project.title}</h3>
+              <h3 className="mb-2 text-lg font-semibold">{project.title}</h3>
               <p className="text-sm text-gray-700 dark:text-gray-500">
                 {project.description}
               </p>
@@ -108,15 +108,15 @@ function Projects() {
         </div>
 
         {activeProject && (
-          <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex justify-center items-center">
-            <div className="dark:bg-gray-800 dark:text-gray-100 bg-white w-[90vw] max-w-xl h-[60vh] rounded-lg shadow-lg relative p-8 overflow-y-auto">
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+            <div className="relative h-[60vh] w-[90vw] max-w-xl overflow-y-auto rounded-lg bg-white p-8 shadow-lg dark:bg-gray-800 dark:text-gray-100">
               <button
                 onClick={() => setActiveProject(null)}
-                className="absolute top-4 right-4 text-2xl text-gray-600 hover:text-red-500"
+                className="absolute right-4 top-4 text-2xl text-gray-600 hover:text-red-500"
               >
                 &times;
               </button>
-              <h3 className="text-xl font-semibold mb-4">
+              <h3 className="mb-4 text-xl font-semibold">
                 {activeProject.title}
               </h3>
               <p className="text-gray-700 dark:text-gray-200">
@@ -126,7 +126,7 @@ function Projects() {
                 <img
                   src={activeProject.image}
                   alt={activeProject.title}
-                  className="w-full max-h-[70vh] object-contain rounded-xl mb-4"
+                  className="mb-4 max-h-[70vh] w-full rounded-xl object-contain"
                 />
               )}
             </div>

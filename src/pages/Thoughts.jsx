@@ -47,25 +47,25 @@ function Thoughts() {
 
   return (
     <section
-      className="bg-white py-10 px-4"
+      className="bg-white px-4 py-10"
       style={backgroundStyle}
       onMouseMove={handleMouseMove}
     >
-      <div className="max-w-7xl mx-auto">
-        <h2 className="text-3xl font-bold my-8 text-left dark:text-gray-100">
+      <div className="mx-auto max-w-7xl">
+        <h2 className="my-8 text-left text-3xl font-bold dark:text-gray-100">
           Thoughts
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-5xl mx-auto">
+        <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 sm:grid-cols-2">
           {posts.map((post) => (
             <div
               key={post.sys.id}
               onClick={() => setActivePost(post)}
-              className="dark:bg-gray-800 dark:text-gray-100 transform hover:scale-105 transition duration-300 bg-white rounded-2xl shadow-md p-6 text-left min-h-60 cursor-pointer"
+              className="min-h-60 transform cursor-pointer rounded-2xl bg-white p-6 text-left shadow-md transition duration-300 hover:scale-105 dark:bg-gray-800 dark:text-gray-100"
             >
-              <h3 className="text-lg font-semibold mb-2">
+              <h3 className="mb-2 text-lg font-semibold">
                 {post.fields.title}
               </h3>
-              <p className="text-sm text-gray-500 mb-1">
+              <p className="mb-1 text-sm text-gray-500">
                 {new Date(post.fields.postedTime).toLocaleDateString()}
               </p>
 
@@ -80,18 +80,18 @@ function Thoughts() {
         </div>
 
         {activePost && (
-          <div className=" dark:text-gray-100 fixed inset-0 bg-black bg-opacity-50 z-50 flex justify-center items-center">
-            <div className="dark:bg-gray-800 dark:text-gray-100 bg-white w-[90vw] max-w-3xl h-[80vh] rounded-lg shadow-lg relative p-8 overflow-y-auto">
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 dark:text-gray-100">
+            <div className="relative h-[80vh] w-[90vw] max-w-3xl overflow-y-auto rounded-lg bg-white p-8 shadow-lg dark:bg-gray-800 dark:text-gray-100">
               <button
                 onClick={() => setActivePost(null)}
-                className="absolute top-4 right-4 text-2xl text-gray-600 hover:text-red-500"
+                className="absolute right-4 top-4 text-2xl text-gray-600 hover:text-red-500"
               >
                 &times;
               </button>
-              <h3 className="text-2xl font-bold mb-2">
+              <h3 className="mb-2 text-2xl font-bold">
                 {activePost.fields.title}
               </h3>
-              <p className="text-sm text-gray-500 mb-4">
+              <p className="mb-4 text-sm text-gray-500">
                 {new Date(activePost.fields.postedTime).toLocaleString()}
               </p>
 
@@ -99,7 +99,7 @@ function Thoughts() {
                 <img
                   src={activePost.fields.image.fields.file.url}
                   alt="coverImage"
-                  className="w-full max-h-[300px] object-contain rounded-xl mb-6"
+                  className="mb-6 max-h-[300px] w-full rounded-xl object-contain"
                 />
               )}
 

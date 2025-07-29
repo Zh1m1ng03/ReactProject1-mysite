@@ -12,10 +12,10 @@ function App() {
   const { darkMode, setDarkMode } = useTheme();
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="flex min-h-screen flex-col">
       <button
         onClick={() => setDarkMode(!darkMode)}
-        className="absolute top-4 right-4 p-2 bg-gray-200 dark:bg-gray-800 dark:text-gray-100 rounded"
+        className="absolute right-4 top-4 rounded bg-gray-200 p-2 dark:bg-gray-800 dark:text-gray-100"
       >
         {darkMode ? "☀️ Light" : "🌙 Dark"}
       </button>

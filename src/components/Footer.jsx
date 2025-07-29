@@ -1,7 +1,7 @@
 function Footer() {
   return (
-    <footer className="bg-gray-800 text-gray-200 text-sm py-6 px-4 ">
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+    <footer className="bg-gray-800 px-4 py-6 text-sm text-gray-200">
+      <div className="mx-auto flex max-w-6xl flex-col items-center justify-between space-y-4 md:flex-row md:space-y-0">
         <div className="text-center md:text-left">
           <p>
             Email:{" "}
@@ -22,7 +22,7 @@ function Footer() {
             href="https://linkedin.com/in/zhiming-wu-a4b047295"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-blue-400 transition"
+            className="transition hover:text-blue-400"
           >
             LinkedIn
           </a>
@@ -30,7 +30,7 @@ function Footer() {
             href="https://github.com/Zh1m1ng03"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-blue-400 transition"
+            className="transition hover:text-blue-400"
           >
             GitHub
           </a>

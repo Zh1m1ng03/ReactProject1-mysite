@@ -29,20 +29,20 @@ function Home() {
 
   return (
     <main
-      className="py-10 px-4 transition-colors duration-500 min-h-screen"
+      className="min-h-screen px-4 py-10 transition-colors duration-500"
       style={backgroundStyle}
       onMouseMove={handleMouseMove}
     >
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-6 px-4">
-        <div className="transform hover:scale-105 transition duration-300 flex-1 bg-white rounded-2xl shadow-md p-6 text-left min-h-96 dark:bg-gray-800 dark:text-gray-100">
-          <h2 className="text-xl font-semibold mb-4 text-center">About Me</h2>
+      <div className="mx-auto flex max-w-7xl flex-col gap-6 px-4 md:flex-row">
+        <div className="min-h-96 flex-1 transform rounded-2xl bg-white p-6 text-left shadow-md transition duration-300 hover:scale-105 dark:bg-gray-800 dark:text-gray-100">
+          <h2 className="mb-4 text-center text-xl font-semibold">About Me</h2>
           <p>Name: Zhiming Wu</p>
           <p>Email: Zhiming.Wu@uon.edu.au</p>
           <p>PhoneNo: 0424720331</p>
           <p className="flex items-center space-x-2">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="w-4 h-4 mr-2 "
+              className="mr-2 h-4 w-4"
               fill="blue"
               viewBox="0 0 24 24"
             >
@@ -52,7 +52,7 @@ function Home() {
               href="https://www.linkedin.com/in/zhiming-wu-a4b047295/"
               target="_blank"
               rel="noopener noreferrer"
-              className=" items-center hover:underline hover:text-blue-700"
+              className="items-center hover:text-blue-700 hover:underline"
             >
               My LinkedIn Profile
             </a>
@@ -60,7 +60,7 @@ function Home() {
           <p className="flex items-center space-x-2">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="w-4 h-4 inline-block mr-2 text-gray-800"
+              className="mr-2 inline-block h-4 w-4 text-gray-800"
               fill="currentColor"
               viewBox="0 0 24 24"
             >
@@ -79,7 +79,7 @@ function Home() {
               href="https://github.com/Zh1m1ng03?tab=repositories"
               target="_blank"
               rel="noopener noreferrer"
-              className=" items-center hover:underline hover:text-blue-700"
+              className="items-center hover:text-blue-700 hover:underline"
             >
               My GitHub Repositories
             </a>
@@ -89,13 +89,13 @@ function Home() {
         <>
           <div
             onClick={() => setShowSubPageEdu(true)}
-            className="dark:bg-gray-800 dark:text-gray-100 flex-1 bg-white rounded-2xl shadow-md p-6 text-left min-h-64 transform hover:scale-105 transition duration-300 cursor-pointer relative"
+            className="relative min-h-64 flex-1 transform cursor-pointer rounded-2xl bg-white p-6 text-left shadow-md transition duration-300 hover:scale-105 dark:bg-gray-800 dark:text-gray-100"
           >
-            <h2 className="text-xl font-semibold mb-4 text-center">
+            <h2 className="mb-4 text-center text-xl font-semibold">
               Education
             </h2>
             <div className="space-y-2 pl-2">
-              <div className="flex justify-between w-full">
+              <div className="flex w-full justify-between">
                 <p className="font-semibold">University of Newcastle</p>
                 <span className="text-sm text-gray-700">2023.07 – Present</span>
               </div>
@@ -108,20 +108,26 @@ function Home() {
           </div>
 
           {showSubPageEdu && (
-            <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex justify-center items-center">
-              <div className="bg-white w-[80vw] h-[80vh] rounded-lg shadow-lg relative p-8 dark:bg-gray-900 dark:text-gray-100">
+            <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+              <div className="relative h-[80vh] w-[80vw] overflow-y-auto rounded-lg bg-white p-8 shadow-lg dark:bg-gray-900 dark:text-gray-100">
                 <button
                   onClick={() => setShowSubPageEdu(false)}
-                  className="absolute top-4 right-4 text-2xl text-gray-600 hover:text-red-500"
+                  className="absolute right-4 top-4 text-2xl text-gray-600 hover:text-red-500"
                 >
                   &times;
                 </button>
-                <h3 className="text-xl font-semibold mb-4">
+                <h3 className="mb-4 text-xl font-semibold">
                   Courses and Grades
                 </h3>
                 <p className="text-gray-600">
                   (This section will display course details)
                 </p>
+
+                <img
+                  src="/grades.png"
+                  alt="Grades Overview"
+                  className="h-full w-full rounded-lg object-contain"
+                />
               </div>
             </div>
           )}
@@ -130,9 +136,9 @@ function Home() {
         <>
           <div
             onClick={() => setShowSubPageSkill(true)}
-            className="dark:bg-gray-800 dark:text-gray-100 flex-1 bg-white rounded-2xl shadow-md p-6 text-left min-h-64 transform hover:scale-105 transition duration-300 cursor-pointer relative"
+            className="relative min-h-64 flex-1 transform cursor-pointer rounded-2xl bg-white p-6 text-left shadow-md transition duration-300 hover:scale-105 dark:bg-gray-800 dark:text-gray-100"
           >
-            <h2 className="text-xl font-semibold mb-4 text-center">Skills</h2>
+            <h2 className="mb-4 text-center text-xl font-semibold">Skills</h2>
             <div className="space-y-2 pl-2 text-sm">
               <p>
                 <span className="font-semibold">
@@ -149,7 +155,7 @@ function Home() {
               </p>
               <p>
                 <span className="font-semibold">Tools & Frameworks:</span>{" "}
-                Tailwind CSS, Git, VSCode, Postman
+                Tailwind CSS, Git, Contentful CMS and Vercel
               </p>
               <p>
                 <span className="font-semibold">Databases:</span> Microsoft SQL
@@ -162,18 +168,109 @@ function Home() {
           </div>
 
           {showSubPageSkill && (
-            <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex justify-center items-center">
-              <div className="bg-white w-[80vw] h-[80vh] rounded-lg shadow-lg relative p-8 dark:bg-gray-900 dark:text-gray-100">
+            <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+              <div className="relative h-[80vh] w-[80vw] overflow-y-auto rounded-lg bg-white p-8 shadow-lg dark:bg-gray-900 dark:text-gray-100">
                 <button
                   onClick={() => setShowSubPageSkill(false)}
-                  className="absolute top-4 right-4 text-2xl text-gray-600 hover:text-red-500"
+                  className="absolute right-4 top-4 text-2xl text-gray-600 hover:text-red-500"
                 >
                   &times;
                 </button>
-                <h3 className="text-xl font-semibold mb-4">Detailed Skills</h3>
+                <h3 className="mb-4 text-xl font-semibold">Detailed Skills</h3>
                 <p className="text-gray-600">
                   (This section will display detailed skill sets and projects)
                 </p>
+                <div className="mx-auto max-w-4xl px-6 py-10">
+                  <div className="grid grid-cols-[120px_1fr] gap-4">
+                    <div className="font-semibold text-gray-800">Frontend</div>
+                    <div>
+                      <p>
+                        <strong>React:</strong> Hands-on experience with the
+                        React framework, React Hooks, and modern JavaScript.
+                        Independently designed and built a{" "}
+                        <a
+                          href="https://github.com/Zh1m1ng03/ReactProject1-mysite"
+                          className="text-blue-600 underline"
+                        >
+                          local website
+                        </a>{" "}
+                        using React and Vite, with structured components and
+                        integrated blog functionality through a headless CMS.
+                      </p>
+                      <p className="mt-2">
+                        <strong>HTML, XML, PHP, CSS:</strong> Familiar with
+                        using HTML, CSS, PHP, XML, and JavaScript in academic
+                        settings. Completed{" "}
+                        <a
+                          href="https://github.com/Zh1m1ng03/WebProjectAssignment"
+                          className="text-blue-600 underline"
+                        >
+                          assignments and small projects
+                        </a>{" "}
+                        at university involving static webpage creation, form
+                        handling, and server-side scripting using traditional
+                        web technologies.
+                      </p>
+                    </div>
+
+                    <div className="font-semibold text-gray-800">Backend</div>
+                    <div>
+                      <p>
+                        <strong>Java:</strong> Familiar with Java syntax and
+                        object-oriented principles. Completed course projects
+                        such as simulating a juice factory system.
+                      </p>
+                      <p className="mt-2">
+                        <strong>C++:</strong> Familiar with C++ syntax and used
+                        it as a foundation to understand core data structures
+                        such as arrays, linked lists, stacks, and queues.
+                      </p>
+                    </div>
+
+                    <div className="font-semibold text-gray-800">Databases</div>
+                    <div>
+                      <p>
+                        <strong>Database Design:</strong> Knowledge of EER
+                        models, entity-relationship diagrams, normalization, and
+                        relational schema design from conceptual to logical
+                        level.
+                      </p>
+                      <p className="mt-2">
+                        <strong>MS SQL Server:</strong> Used in course
+                        assignments to design and query relational databases.
+                      </p>
+                      <p className="mt-2">
+                        <strong>Neo4j:</strong> Familiar with basic CRUD
+                        operations and understanding of graph database concepts
+                        such as nodes and relationships.
+                      </p>
+                    </div>
+
+                    <div className="font-semibold text-gray-800">Tools</div>
+                    <div>
+                      <p>
+                        <strong>Tailwind CSS:</strong> Used for utility-first
+                        styling in React projects, enabling rapid and responsive
+                        UI development.
+                      </p>
+                      <p className="mt-2">
+                        <strong>Contentful CMS:</strong> Integrated as a
+                        headless CMS to manage and deliver structured content to
+                        frontend applications.
+                      </p>
+                      <p className="mt-2">
+                        <strong>Git & GitHub:</strong> Used for version control
+                        and collaborative development with GitHub-hosted
+                        repositories.
+                      </p>
+                      <p className="mt-2">
+                        <strong>Vercel:</strong> Used to deploy React and
+                        Vite-based websites with seamless integration and
+                        continuous deployment.
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           )}
