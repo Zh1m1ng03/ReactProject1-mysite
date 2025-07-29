@@ -92,7 +92,17 @@ function Thoughts() {
                 {activePost.fields.title}
               </h3>
               <p className="mb-4 text-sm text-gray-500">
-                {new Date(activePost.fields.postedTime).toLocaleString()}
+                {new Date(activePost.fields.postedTime).toLocaleString(
+                  undefined,
+                  {
+                    year: "numeric",
+                    month: "2-digit",
+                    day: "2-digit",
+                    hour: "2-digit",
+                    minute: "2-digit",
+                    hour12: false,
+                  },
+                )}
               </p>
 
               {activePost.fields.image && (
